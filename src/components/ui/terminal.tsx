@@ -226,8 +226,10 @@ export const Terminal = ({
   }, [children, sequence]);
 
   const content = (
-    <div
+    <motion.div
       ref={containerRef}
+      layout
+      transition={{ duration: 0.4, ease: "easeInOut" }}
       className={cn(
         "border-border bg-background z-0 h-full max-h-[400px] w-full max-w-lg rounded-xl border",
         className,
@@ -243,7 +245,7 @@ export const Terminal = ({
       <pre className="p-4">
         <code className="grid gap-y-1 overflow-auto">{wrappedChildren}</code>
       </pre>
-    </div>
+    </motion.div>
   );
 
   if (!sequence) return content;

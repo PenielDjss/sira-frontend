@@ -1,9 +1,11 @@
+import { Features } from "@/components/sections/Features";
 import Hero from "@/components/sections/Hero";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center">
       <Hero />
+      <Features />
     </div>
   );
 };
