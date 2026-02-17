@@ -1,7 +1,13 @@
-import './App.css'
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/router";
+import { ThemeProvider } from "./providers/theme-provider";
 
-// src/app/App.tsx
-export default function App() {
-  return null
+function App() {
+  return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
+export default App;
