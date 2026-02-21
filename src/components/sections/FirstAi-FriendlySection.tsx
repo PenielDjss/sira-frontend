@@ -1,5 +1,4 @@
 import { Button } from "../ui/button";
-import { AIButton } from "../ui/AiButton";
 
 export const AiFriendly = () => {
   return (
