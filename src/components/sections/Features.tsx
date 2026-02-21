@@ -1,44 +1,45 @@
 import { Button } from "../ui/button";
 
+const featureCardContent = {
+  title: "Sira CLI",
+  description:
+    "Sira CLI vous donne des projet AI-Friendly prêts à l'emploi et vous epargne d'installer des dépendances une par une. Des architecture déjà prêtes à l'emploi et des outils open-sources utilsés par des millions de dev",
+} as const;
+
 export const Features = () => {
   return (
-    <section className="w-full min-h-screen items-center flex ">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12 w-full">
-        <div className="flex flex-col px-20 gap-8 text-center">
-          <h4 className="font-bold pl-2 text-2xl sm:text-3xl lg:text-4xl">
+    <section className="flex w-full min-h-screen items-center py-8 sm:py-12 lg:py-16">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-12">
+        <div className="flex flex-col gap-6 text-center sm:gap-8">
+          <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl">
             Features
-          </h4>
-          <div className="flex gap-4">
-            <div className="flex flex-col items-center gap-4 p-6 border min-h-140 flex-1 rounded-2xl text-center">
-              <div className="border rounded-xl w-full h-full"></div>
-              <div className="text-center font-bold text-xl">Sira CLI </div>
-              <div>
-                Sira CLI vous donne des projet AI-Friendly prêts à l'emploi et
-                vous epargne d'installer des dépendances une par une. Des
-                architecture déjà prêtes à l'emploi et des outils open-sources
-                utilsés par des millions de dev
-              </div>
-              <Button variant={"outline"} className="w-fit mt-2">
-                En savoir plus
-              </Button>
-            </div>
-            <div className="flex flex-col items-center gap-4 p-6 border min-h-140 flex-1 rounded-2xl text-center">
-              <div className="border rounded-xl w-full h-full"></div>
-              <div className="text-center font-bold text-xl">Sira CLI </div>
-
-              <div>
-                Sira CLI vous donne des projet AI-Friendly prêts à l'emploi et
-                vous epargne d'installer des dépendances une par une. Des
-                architecture déjà prêtes à l'emploi et des outils open-sources
-                utilsés par des millions de dev
-              </div>
-              <Button variant={"outline"} className="w-fit mt-2">
-                En savoir plus
-              </Button>
-            </div>
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
+            <FeatureCard variant="default" />
+            <FeatureCard variant="outline" />
+            <FeatureCard variant="outline" />
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+function FeatureCard({
+  variant,
+}: {
+  variant: "default" | "outline";
+}) {
+  return (
+    <div className="flex min-h-0 flex-col items-center gap-3 rounded-2xl border p-4 text-center sm:min-h-[140px] sm:gap-4 sm:p-6">
+      <div className="aspect-video w-full shrink-0 rounded-xl border bg-muted/30" />
+      <div className="font-bold text-lg sm:text-xl">{featureCardContent.title}</div>
+      <p className="text-sm text-muted-foreground sm:text-base">
+        {featureCardContent.description}
+      </p>
+      <Button variant={variant} className="mt-auto w-fit shrink-0">
+        En savoir plus
+      </Button>
+    </div>
+  );
+}

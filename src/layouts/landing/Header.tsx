@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center border-b w-full py-3 px-8">
+    <header className="sticky top-0 z-50 flex justify-between items-center border-b w-full py-3 px-8 bg-background">
       <Link to="/">
         <h1 className="text-2xl font-bold">Sira</h1>
       </Link>
@@ -49,7 +49,7 @@ const Header = () => {
 
         <Button>Get Started</Button>
       </div>
-    </div>
+    </header>
   );
 };
 
