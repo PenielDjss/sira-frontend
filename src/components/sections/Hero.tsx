@@ -9,8 +9,8 @@ const Hero = () => {
                 className="pointer-events-none absolute inset-0"
                 style={{
                     backgroundImage: `
-            linear-gradient(rgba(128,128,128,0.12) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(128,128,128,0.12) 1px, transparent 1px)
+            linear-gradient(rgba(128,128,128,0.12) 2px, transparent 1px),
+            linear-gradient(90deg, rgba(128,128,128,0.12) 2px, transparent 1px)
           `,
                     backgroundSize: "60px 60px",
                 }}
